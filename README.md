@@ -5,7 +5,7 @@ The **Optimized Sales Management System** is a database-driven application desig
 
 
 ## Project Screenshots
-![Screenshot](Screenshot 2025-03-07 184845.png)
+![Screenshot](./login.png)
 
 
 ### **Key Features**
