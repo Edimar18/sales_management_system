@@ -7,6 +7,10 @@ The **Optimized Sales Management System** is a database-driven application desig
 ## Project Screenshots
 ![Screenshot](./login.png)
 
+![Screenshot](./register.png)
+
+![Screenshot](./home.png)
+
 
 ### **Key Features**
 - Relational database with proper normalization
