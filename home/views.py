@@ -16,3 +16,7 @@ def about(request):
 def Logout(request):
     logout(request)
     return redirect(reverse('Login'))
+
+def ProductsPage(request, pk):
+    products = Products.objects.get(productid=pk)
+    return render(request, 'products.html', {'products':products})
