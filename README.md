@@ -3,6 +3,11 @@
 ## Project Overview
 The **Optimized Sales Management System** is a database-driven application designed to manage online product sales efficiently. This system aims to implement an optimized database structure with advanced SQL queries, transaction management, and a simple user interface to facilitate usability.
 
+
+## Project Screenshots
+![Screenshot](Screenshot 2025-03-07 184845.png)
+
+
 ### **Key Features**
 - Relational database with proper normalization
 - Advanced SQL queries (JOINs, subqueries, views, stored procedures, triggers)
@@ -56,25 +61,29 @@ The **Optimized Sales Management System** is a database-driven application desig
 ## **Project Status**
 | Task | Status |
 |------|--------|
-| Database Design & Implementation |  ❌ Not Started |
-| Advanced SQL Queries |  ❌ Not Started |
-| Query Optimization | ❌ Not Started |
-| Transaction Management |❌ Not Started |
-| Application Development |  ❌ Not Started |
-| Documentation & Presentation | ❌ Not Started |
+| Database Design & Implementation |  ✅ Completed  |
+| Advanced SQL Queries |  ✅ Completed  |
+| Query Optimization | ✅ Completed  |
+| Transaction Management |✅ Completed  |
+| Application Development |  ⏳ In Progress |
+| Documentation & Presentation | ⏳ In Progress |
 
 ## **How to Use**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Edimar18/SMART-SALE-DATABASE.git
+   git clone https://github.com/Edimar18/sales_management_system.git
    ```
 2. Set up the database using `database.sql`.
 3. Run SQL queries for data operations.
 4. (Optional) Run the application interface if implemented.
 
 ## **Contributors**
-- **[Your Name]** - Database Developer & Project Lead
-- **Team Members (if any)**
+- **Edimar** - Database Developer & Project Lead
+- **Ciara**
+- **Josyl**
+- **Vanessa**
+- **Danilo**
+
 
 ## **License**
 This project is licensed under the [MIT License](LICENSE).
