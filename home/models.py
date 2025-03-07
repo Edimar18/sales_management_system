@@ -173,6 +173,7 @@ class Users(models.Model):
     name = models.CharField(db_column='Name', max_length=100)  # Field name made lowercase.
     email = models.CharField(db_column='Email', unique=True, max_length=100)  # Field name made lowercase.
     role = models.CharField(db_column='Role', max_length=50)  # Field name made lowercase.
+    password = models.CharField(db_column='Password', max_length=64, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         db_table = 'users'
