@@ -19,4 +19,5 @@ def Logout(request):
 
 def ProductsPage(request, pk):
     products = Products.objects.get(productid=pk)
-    return render(request, 'products.html', {'products':products})
+    related_products = Products.objects.order_by('?')[:4]
+    return render(request, 'products.html', {'products':products, 'related_products':related_products})

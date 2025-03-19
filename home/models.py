@@ -151,6 +151,7 @@ class Products(models.Model):
     price = models.DecimalField(db_column='Price', max_digits=10, decimal_places=2)  # Field name made lowercase.
     stock = models.IntegerField(db_column='Stock')  # Field name made lowercase.
     imageurl = models.CharField(db_column='ImageURL', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    product_details = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -176,4 +177,5 @@ class Users(models.Model):
     password = models.CharField(db_column='Password', max_length=64, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
+        managed = False
         db_table = 'users'
