@@ -1,0 +1,19 @@
+.order-card {
+    transition: all 0.2s ease;
+}
+.order-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.badge-processing {
+    background-color: #ffc107;
+    color: #212529;
+}
+.badge-shipped {
+    background-color: #0d6efd;
+}
+.badge-delivered {
+    background-color: #198754;
+}
+.badge-cancelled {
+    background-color: #dc3545;
+}

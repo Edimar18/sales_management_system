@@ -177,5 +177,5 @@ class Users(models.Model):
     password = models.CharField(db_column='Password', max_length=64, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        
         db_table = 'users'
