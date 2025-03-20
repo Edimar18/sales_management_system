@@ -12,7 +12,9 @@ def home(request):
 
 def about(request):
     return render(request,'about.html')
-
+def purchase_history(request):
+    print(0000)
+    return render(request,'history.html')
 def Logout(request):
     logout(request)
     return redirect(reverse('Login'))
