@@ -21,8 +21,8 @@ The **Optimized Sales Management System** is a database-driven application desig
 
 ## **Tech Stack**
 - **Database:** MySQL / phpMyAdmin / Any SQL-supported platform
-- **Backend:** PHP / Python / Java (Optional GUI Development)
-- **Frontend:** HTML / CSS / JavaScript (Optional UI Enhancements)
+- **Backend:** Python DJANGO
+- **Frontend:** HTML / CSS / JavaScript / Bootstrap
 
 ## **Project Objectives**
 1. **Database Design & Implementation**  
@@ -68,18 +68,18 @@ The **Optimized Sales Management System** is a database-driven application desig
 | Database Design & Implementation |  ✅ Completed  |
 | Advanced SQL Queries |  ✅ Completed  |
 | Query Optimization | ✅ Completed  |
-| Transaction Management |✅ Completed  |
-| Application Development |  ⏳ In Progress |
-| Documentation & Presentation | ⏳ In Progress |
+| Transaction Management |✅ Codmplete  |
+| Application Development |  ✅ Codmplete  |
+| Documentation & Presentation | ✅ Codmplete  |
 
 ## **How to Use**
 1. Clone the repository:
    ```bash
    git clone https://github.com/Edimar18/sales_management_system.git
    ```
-2. Set up the database using `database.sql`.
-3. Run SQL queries for data operations.
-4. (Optional) Run the application interface if implemented.
+2. Export the sales_management_system.sql file to xampp
+3. make sure that the mysql and php port are already running in xampp.
+4. run python manage.py runserver
 
 ## **Contributors**
 - **Edimar** - Database Developer & Project Lead
