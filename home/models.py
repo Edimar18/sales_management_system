@@ -130,18 +130,18 @@ class Orderdetails(models.Model):
     subtotal = models.DecimalField(db_column='Subtotal', max_digits=10, decimal_places=2)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        
         db_table = 'orderdetails'
 
 
 class Orders(models.Model):
     orderid = models.AutoField(db_column='OrderID', primary_key=True)  # Field name made lowercase.
-    userid = models.ForeignKey('Users', models.DO_NOTHING, db_column='UserID')  # Field name made lowercase.
+    userid = models.ForeignKey('Users', models.DO_NOTHING, db_column='UserID', on_delete=models.CASCADE)  # Field name made lowercase.
     totalamount = models.DecimalField(db_column='TotalAmount', max_digits=10, decimal_places=2)  # Field name made lowercase.
     orderdate = models.DateTimeField(db_column='OrderDate', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        
         db_table = 'orders'
 
 
@@ -154,7 +154,7 @@ class Products(models.Model):
     product_details = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        
         db_table = 'products'
 
 
@@ -165,7 +165,7 @@ class Transactions(models.Model):
     paymentdate = models.DateTimeField(db_column='PaymentDate', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        
         db_table = 'transactions'
 
 
