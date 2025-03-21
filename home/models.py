@@ -136,7 +136,7 @@ class Orderdetails(models.Model):
 
 class Orders(models.Model):
     orderid = models.AutoField(db_column='OrderID', primary_key=True)  # Field name made lowercase.
-    userid = models.ForeignKey('Users', models.DO_NOTHING, db_column='UserID', on_delete=models.CASCADE)  # Field name made lowercase.
+    userid = models.ForeignKey('Users', models.CASCADE, db_column='UserID')  # Field name made lowercase.
     totalamount = models.DecimalField(db_column='TotalAmount', max_digits=10, decimal_places=2)  # Field name made lowercase.
     orderdate = models.DateTimeField(db_column='OrderDate', blank=True, null=True)  # Field name made lowercase.
 
