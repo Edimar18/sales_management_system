@@ -12,7 +12,7 @@ document.getElementById("checkoutButton").addEventListener("click", function() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert("Product added to cart!");
+            alert("Product succesfuly bought");
         } else {
             alert("Failed to add product to cart!");
         }

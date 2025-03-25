@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.db import connection
+from django.db import connection, transaction
 from .models import Products, Users, Orders, Orderdetails, Transactions
 from django.urls import reverse
 from django.contrib.auth import logout
@@ -54,25 +54,33 @@ def checkout(request):
         data = json.loads(request.body)
         product_id = data.get('productId')
         user_id = request.session.get('user_id')
-        quantity = data.get('quantity')
+        quantity = int(data.get('quantity'))
         total_amount = Products.objects.get(productid=product_id).price * int(quantity)
         order_date = datetime.datetime.now()
         user = Users.objects.get(userid=user_id)
         
+ 
+        ## IMPLEMENT TRANSACTION MANAGEMENT SYSTEM
         try:
-           order = Orders.objects.create(userid=user, totalamount=total_amount, orderdate=order_date)
-           order.save()
-           order_id = order.orderid
-           product = Products.objects.get(productid=product_id)
-           order_detail = Orderdetails.objects.create(orderid=order, productid=product, quantity=quantity, subtotal=total_amount)
-           order_detail.save()
-           transaction = Transactions.objects.create(orderid=order, paymentstatus='Completed', paymentdate=datetime.datetime.now())
-           
-           transaction.save()
-           print('successfully created')
-           return JsonResponse({'success': True})
+            with transaction.atomic():
+                order = Orders.objects.create(userid=user, totalamount=total_amount, orderdate=order_date)
+                order.save()
+                product = Products.objects.select_for_update().get(productid=product_id)
+                if product.stock < quantity:
+                    raise ValueError("Not enough stock")
+                
+                product.stock -= quantity
+                product.save()
+                order_detail = Orderdetails.objects.create(orderid=order, productid=product, quantity=quantity, subtotal=total_amount)
+                order_detail.save()
+                transactions = Transactions.objects.create(orderid=order, paymentstatus='Completed', paymentdate=datetime.datetime.now())
+                transactions.save()
         except Exception as e:
-            print('Failed to create', e)
+            print(f'Transaction failed: {e}')
             return JsonResponse({'success': False, 'message': str(e)})
+                    
+        print('successfully created')
+        return JsonResponse({'success': True})
+        
 
     return JsonResponse({'success': False, 'message': 'Invalid request method'})
