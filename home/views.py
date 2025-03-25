@@ -58,8 +58,7 @@ def checkout(request):
         total_amount = Products.objects.get(productid=product_id).price * int(quantity)
         order_date = datetime.datetime.now()
         user = Users.objects.get(userid=user_id)
-        
- 
+
         ## IMPLEMENT TRANSACTION MANAGEMENT SYSTEM
         try:
             with transaction.atomic():

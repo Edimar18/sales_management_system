@@ -82,14 +82,10 @@ The **Optimized Sales Management System** is a database-driven application desig
 4. run python manage.py runserver
 
 ## **Contributors**
-- **Edimar** - Database Developer & Project Lead
+- **Edimar** 
 - **Ciara**
 - **Josyl**
 - **Vanessa**
 - **Danilo**
-
-
-## **License**
-This project is licensed under the [MIT License](LICENSE).
 
 
